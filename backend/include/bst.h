@@ -20,8 +20,14 @@ int bst_insert(BST *tree, const Student *student);
 
 Student *bst_search(BST *tree, int id);
 
+int bst_delete(BST *tree,int id);
+
+void bst_destroy(BST *tree);
+
 typedef void (*BSTVisitFn)(const Student *student, void *context);
 
 void bst_inorder(const BST *tree, BSTVisitFn visit, void *context);
+
+void bst_preorder(const BST *tree, BSTVisitFn visit, void *context);
 
 #endif

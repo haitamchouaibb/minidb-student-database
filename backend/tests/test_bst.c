@@ -32,13 +32,13 @@ int main(void) {
 
     printf("Inserting students...\n");
 
-    printf("Student 1: %d\n", bst_insert(&tree, &s1));
+    printf("Student 1: %d\n", bst_insert(&tree, &s1)); // Begins from the root and checks recursively for a NULL space to allocate the new Node
     printf("Student 2: %d\n", bst_insert(&tree, &s2));
     printf("Student 3: %d\n", bst_insert(&tree, &s3));
     printf("Student 4: %d\n", bst_insert(&tree, &s4));
     printf("Student 5: %d\n", bst_insert(&tree, &s5));
 
-Student *found = bst_search(&tree, 1003);
+Student *found = bst_search(&tree, 1003); // bst_search functions return pointer to Student struct
 
 if (found != NULL) {
     student_print(found);
@@ -46,7 +46,7 @@ if (found != NULL) {
     printf("Student not found.\n");
 }
 
-found = bst_search(&tree, 9999);
+found = bst_search(&tree, 9999); // returns NULL if not found
 
 if (found != NULL) {
     student_print(found);
