@@ -1,5 +1,6 @@
 #ifndef STUDENT_H
 #define STUDENT_H
+#include <stddef.h>
 
 #define FIRST_NAME_SIZE 50
 #define LAST_NAME_SIZE 50
@@ -29,4 +30,7 @@ int student_init(
 
 void student_print(const Student *student);
 
+int student_to_csv(const Student *student, char *buffer, size_t size);
+int student_from_csv(Student *student, const char *csv);
+int student_to_json(const Student *student, char *buffer, size_t size);
 #endif;
